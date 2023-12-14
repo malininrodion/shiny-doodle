@@ -1,0 +1,13 @@
+        case .twoFingersTranslate(let gestureState):
+            newState = onTwoFingersTranslate(gestureState, in: newState)
+            
+        case .rotate(let gestureState):
+            newState = onRotate(gestureState, in: newState)
+        }
+        
+        return newState
+        
+    }
+    
+    private mutating func onTranslate(_ gestureState: GestureType.GestureState<CGPoint>,
+                                      in state: AppState) -> AppState {
